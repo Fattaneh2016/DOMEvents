@@ -1,0 +1,76 @@
+<script>
+   /* window.onload = function () {
+        document.getElementById("aRange").addEventListener("change", rangeChangeEvent);
+    }
+
+    function rangeChangeEvent() {
+        document.getElementById("rangeValue").innerText = this.value;
+    }
+
+   
+    window.onload = function () {
+      document.getElementById("firstNameText").focus();
+      document.getElementById("firstNameText").addEventListener("blur", function () {
+            if (this.value.length < 5) {
+               document.getElementById("ruleViolation").innerText ='First Name is required to be 5 letters.';
+                document.getElementById("firstNameText").style.color = 'red';
+                this.focus();
+            }
+        });   
+        
+        document.onkeydown = function () {    
+    if (window.event.ctrlKey && String.fromCharCode(window.event.keyCode) == 'F')
+        document.getElementById("firstNameText").focus();
+    if (window.event.ctrlKey && String.fromCharCode(window.event.keyCode) == 'L')
+        document.getElementById("lastNameText").focus();
+    return false;
+}
+   */      
+    window.onload = function () {
+     document.getElementById("yellowBox").addEventListener("click", yellowBoxClick);
+}
+function yellow1BoxClick() {
+     document.write("Client X: " + window.event.clientX + " ClientY: " 
+       + window.event.clientY);
+     document.write("<BR />");
+     document.write("offsetX: " + window.event.offsetX + " offsetY: " 
+       + window.event.offsetY);
+     document.write("<BR />");
+     document.write("screen X: " + window.event.screenX + " screenY: " 
+       + window.event.screenY);        
+}
+    window.onload = function () {
+     document.getElementById("yellowBox").addEventListener("mouseenter",yellowBoxEnter);
+     document.getElementById("yellowBox").addEventListener("mouseleave",yellowBoxLeave);
+ }
+ function yellowBoxEnter() {
+     this.classList.add("scale");
+ }
+ function yellowBoxLeave() {
+     this.classList.remove("scale");
+ }
+
+    
+</script>
+<style>
+    .scale {
+        transform:scaleX(1.5);
+    }
+</style>
+
+<body>    
+    <input id="aRange" type="range" max="200" min="0" value="0"/>
+    <div id="rangeValue"></div>
+
+    <input id="firstNameText" type="text" placeholder="firstname">
+
+    <input id="lastNameText" type="text" placeholder="lastName">
+
+    <div id="ruleViolation"></div>
+
+    <p id="yellow1Box" style="background-color: #b6ff00" >hello </p>
+    <div id="yellowBox" style="width: 50%;height:50%;margin: 0 auto;
+       background-color:yellow;"></div>
+
+
+</body>
